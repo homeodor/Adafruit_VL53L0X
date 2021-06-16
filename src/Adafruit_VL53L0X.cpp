@@ -671,11 +671,28 @@ FixPoint1616_t Adafruit_VL53L0X::getLimitCheckValue(uint16_t LimitCheckId) {
   return (LimitCheckValue);
 }
 
+/**************************************************************************/
+/*!
+    @brief  Calibrate offset, as is per documentation
+    @param   distance   The distance of target
+    @param   result     A reference to a variable to return the result
+    @return  true if succeeded.
+ */
+/**************************************************************************/
 boolean calibrateOffset(FixPoint1616_t distance, FixPoint1616_t& result)
 {
     Status = VL53L0X_PerformOffsetCalibration(pMyDevice, distance, &result);
     return (Status == VL53L0X_ERROR_NONE);
 }
+
+/**************************************************************************/
+/*!
+    @brief  Calibrate crosstalk, as is per documentation
+    @param   distance   The distance of target
+    @param   result     A reference to a variable to return the result
+    @return  true if succeeded.
+ */
+/**************************************************************************/
     
 boolean calibrateXtalk (FixPoint1616_t distance, FixPoint1616_t& result)
 {
