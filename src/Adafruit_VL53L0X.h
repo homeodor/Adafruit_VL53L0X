@@ -115,7 +115,7 @@ public:
                              FixPoint1616_t LimitCheckValue);
   FixPoint1616_t getLimitCheckValue(uint16_t LimitCheckId);
   
-  boolean calibrateOffset(FixPoint1616_t distance, FixPoint1616_t& result);
+  boolean calibrateOffset(FixPoint1616_t distance, int32_t& result);
   boolean calibrateXtalk (FixPoint1616_t distance, FixPoint1616_t& result);
 
 private:
