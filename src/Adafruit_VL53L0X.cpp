@@ -679,7 +679,7 @@ FixPoint1616_t Adafruit_VL53L0X::getLimitCheckValue(uint16_t LimitCheckId) {
     @return  true if succeeded.
  */
 /**************************************************************************/
-boolean Adafruit_VL53L0X::calibrateOffset(FixPoint1616_t distance, FixPoint1616_t& result)
+boolean Adafruit_VL53L0X::calibrateOffset(FixPoint1616_t distance, int32_t& result)
 {
     Status = VL53L0X_PerformOffsetCalibration(pMyDevice, distance, &result);
     return (Status == VL53L0X_ERROR_NONE);
