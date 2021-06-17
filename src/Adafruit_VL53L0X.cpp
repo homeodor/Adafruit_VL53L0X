@@ -710,6 +710,6 @@ boolean Adafruit_VL53L0X::loadCalibrationXtalk(FixPoint1616_t value)
 {
   Status = VL53L0X_SetXTalkCompensationRateMegaCps(pMyDevice, value);
   if (Status != VL53L0X_ERROR_NONE) return false;
-  Status = VL53L0X_SetXTalkCompensationEnable(pMyDevice);
+  Status = VL53L0X_SetXTalkCompensationEnable(pMyDevice,1);
   return (Status == VL53L0X_ERROR_NONE);
 }
