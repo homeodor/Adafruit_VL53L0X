@@ -700,13 +700,13 @@ boolean Adafruit_VL53L0X::calibrateXtalk (FixPoint1616_t distance, FixPoint1616_
     return (Status == VL53L0X_ERROR_NONE);
 }
 
-boolean Adafruit_VL53L0X::Adafruit_VL53L0X(int32_t value)
+boolean Adafruit_VL53L0X::loadCalibrationOffset(int32_t value)
 {
   Status = VL53L0X_SetOffsetCalibrationDataMicroMeter(pMyDevice, value);
   return (Status == VL53L0X_ERROR_NONE);
 }
 
-boolean Adafruit_VL53L0X::Adafruit_VL53L0X(FixPoint1616_t value)
+boolean Adafruit_VL53L0X::loadCalibrationXtalk(FixPoint1616_t value)
 {
   Status = VL53L0X_SetXTalkCompensationRateMegaCps(pMyDevice, value);
   if (Status != VL53L0X_ERROR_NONE) return false;
