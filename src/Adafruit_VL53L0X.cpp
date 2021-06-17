@@ -699,3 +699,17 @@ boolean Adafruit_VL53L0X::calibrateXtalk (FixPoint1616_t distance, FixPoint1616_
     Status = VL53L0X_PerformXTalkCalibration(pMyDevice, distance, &result);
     return (Status == VL53L0X_ERROR_NONE);
 }
+
+boolean Adafruit_VL53L0X::Adafruit_VL53L0X(int32_t value)
+{
+  Status = VL53L0X_SetOffsetCalibrationDataMicroMeter(pMyDevice, value);
+  return (Status == VL53L0X_ERROR_NONE);
+}
+
+boolean Adafruit_VL53L0X::Adafruit_VL53L0X(FixPoint1616_t value)
+{
+  Status = VL53L0X_SetXTalkCompensationRateMegaCps(pMyDevice, value);
+  if (Status != VL53L0X_ERROR_NONE) return false;
+  Status = VL53L0X_SetXTalkCompensationEnable(pMyDevice);
+  return (Status == VL53L0X_ERROR_NONE);
+}

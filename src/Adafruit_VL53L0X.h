@@ -117,6 +117,8 @@ public:
   
   boolean calibrateOffset(FixPoint1616_t distance, int32_t& result);
   boolean calibrateXtalk (FixPoint1616_t distance, FixPoint1616_t& result);
+  boolean loadCalibrationOffset(int32_t value);
+  boolean loadCalibrationXtalk (FixPoint1616_t value);
 
 private:
   VL53L0X_Dev_t MyDevice;
